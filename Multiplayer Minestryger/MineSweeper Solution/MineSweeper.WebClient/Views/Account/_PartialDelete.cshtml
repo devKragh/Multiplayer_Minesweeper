@@ -1,0 +1,27 @@
+﻿@*<script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#btnConfirmDelete').click(function (e) {
+                location.href = '@Url.Action("../Controllers/Account/UpdateRename/")';
+            });
+        });
+    </script>*@
+@{
+    ViewBag.Title = "Delete User?";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            <div class="col-md-offset-0 col-md-12">
+                <input id="btnConfirmDelete" class="btn btn-success" type="submit" value="Yes" maxlength="12" size="6" onclick="location.href='@Url.Action("DeactivateAccount","Account")'" />
+                <input id="btnCancelDelete" class="btn btn-danger" type="button" value="No" maxlength="12" size="6" onclick="location.href='@Url.Action("Index", "Home")'" />
+            </div>
+            
+        </div>
+    </div>
+}

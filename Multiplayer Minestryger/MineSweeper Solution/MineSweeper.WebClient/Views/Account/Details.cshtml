@@ -1,0 +1,57 @@
+﻿@model MineSweeper.Model.Account
+
+@{
+	ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+	<h4>Account</h4>
+	<hr />
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.Username)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Username)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.Rankpoints)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.Rankpoints)
+		</dd>
+	</dl>
+</div>
+<p>
+	@Html.ActionLink("Change Password", "Edit", new { id = Model.Id }) |
+	@Html.ActionLink("Back to List", "Index")
+</p>
+
+<script>
+	function confirmAction() {
+		if (window.confirm("Do you really want to delete your account?.. It cant be reverted")) {
+			@using (Html.BeginForm())
+				{
+					@Html.AntiForgeryToken()
+				<div class="form-horizontal">
+					<hr />
+					<div class="form-group">
+
+						<div class="col-md-offset-1 col-md-10">
+							<input id="btnConfirmDelete" type="submit" class="btn btn-success" value="YES" onclick="location.href='@Url.Action("DeactivateAccount","Account")'" />
+						</div>
+
+					</div>
+				</div>
+
+				}
+		} else {
+			txt = "You pressed Cancel!";
+		}
+	}
+</script>

@@ -1,0 +1,14 @@
+﻿
+@{
+	ViewBag.Title = "Test";
+}
+<script src="~/Scripts/jquery-1.10.2.js" type="text/javascript"></script>
+<script>
+	onload(function () {
+		$.get("/Account/PartialViewTest",null,null)
+	})
+</script>
+
+<div id="testUpdate">@ViewBag.GameBoard</div>
+
+

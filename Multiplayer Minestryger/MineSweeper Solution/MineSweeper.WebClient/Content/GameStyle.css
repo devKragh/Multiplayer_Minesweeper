@@ -1,0 +1,33 @@
+﻿#game {
+	display: grid;
+	grid-row-gap: 0;
+	grid-template-columns: repeat(30,24px);
+	grid-template-rows: repeat(16, 24px);
+	align-content: center;
+}
+#players{
+	grid-area: players;
+}
+.field {
+	transition-duration: 0.2s;
+	background-color: lightgray;
+	border-style: solid;
+}
+.field:active:hover:not([disabled]) {
+	background-color: darkgray;
+}
+.otherPress{
+	border-color: darkblue;
+}
+.localPress{
+	border-color: green;
+}
+.blank {
+	background-color: white;
+}
+.flag {
+	background-color: cyan;
+}
+.bomb {
+	background-color: red;
+}

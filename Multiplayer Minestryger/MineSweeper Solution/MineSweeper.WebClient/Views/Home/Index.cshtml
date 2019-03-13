@@ -1,0 +1,29 @@
+﻿@using MineSweeper.WebHost.BusinessLogic;
+
+@{
+    ViewBag.Title = "Home page";
+}
+
+<div class="jumbotron">
+    <h1>Minesweeper Battle</h1>
+    <p class="lead">Multiplayer Minesweeper is almost here! 
+	And You can play it for free in the near future. Sign up now!</p>
+</div>
+
+@if (!ValidationController.ValidateAccountSession(Request))
+{
+<div class="row">
+	<div class="col-md-4">
+		<h2>Getting started</h2>
+		<p>
+			Create an account to play the game! Experience the fun of minesweeper on a whole now level!
+		</p>
+		<p><a class="btn btn-default" href="@Url.Action("Register", "Account")">Create new account</a></p>
+	</div>
+	<div class="col-md-4">
+		<h2>Already got an account?</h2>
+		<p>Login to you account to achive the highest rank and battle against others striving for the same.</p>
+		<p><a class="btn btn-default" href="@Url.Action("Login", "Account")">Login</a></p>
+	</div>
+</div>
+}
